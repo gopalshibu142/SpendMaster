@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spendmaster/screens/home.dart';
+import 'package:spendmaster/screens/scan_qr.dart';
+import 'package:spendmaster/screens/upi.dart';
 
 void main() {
   runApp(SpendMaster());
@@ -13,13 +15,13 @@ class SpendMaster extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Spend Master',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData.dark(),
       routes: {
-        '/': (context) => const Home(),
+        '/home': (context) => const Home(),
+        '/scan': (context) => const QRScanner(),
+        '/upi': (context) => const UPIPage(),
       },
-      initialRoute: '/',
+      initialRoute: '/home',
     );
   }
 }
